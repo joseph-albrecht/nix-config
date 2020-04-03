@@ -46,32 +46,35 @@
   
   #copied from https://github.com/nix-community/emacs-overlay/
   nixpkgs.overlays = [
-    emacsGit = let
-      repoMeta = super.lib.importJSON ./emacs-emacs-27.json;
-    in (self.emacs.override { srcRepo = true; }).overrideAttrs(old: {
-                                name = "emacs-git-${repoMeta.version}";
-                                inherit (repoMeta) version;
-                                src = super.fetchFromGitHub {
-                                  owner = "emacs-mirror";
-                                  repo = "emacs";
-                                  inherit (repoMeta) sha256 rev;
-                                };
-                                buildInputs = old.buildInputs ++ [ super.jansson ];
-                              });
-  ];
-  
-  
-  services.xserver.enable = true;
-  services.xserver.layout = "dvorak";
-  services.xserver.libinput.tapping = false;
-  services.xserver.desktopManager.plasma5.enable = true;
-  
-  users.extraUsers.joey = {
-    createHome = true;
-    home = "/home/joey";
-    shell = pkgs.fish;
-    extraGroups = [ "wheel" "networkmanager" ];
-  };
+    (self: super:
+      {
+        emacsGit = let
+          repoMeta = super.lib.importJSON ./emacs-emacs-27.json;
+        in (self.emacs.override { srcRepo = true; }).overrideAttrs(old: {
+                                    name = "emacs-git-${repoMeta.version}";
+                                    inherit (repoMeta) version;
+                                    src = super.fetchFromGitHub {
+                                      owner = "emacs-mirror";
+                                      repo = "emacs";
+                                      inherit (repoMeta) sha256 rev;
+                                    };
+                                    buildInputs = old.buildInputs ++ [ super.jansson ];
+                                  })
+      }
+    ];
+    
+    
+    services.xserver.enable = true;
+    services.xserver.layout = "dvorak";
+    services.xserver.libinput.tapping = false;
+    services.xserver.desktopManager.plasma5.enable = true;
+    
+    users.extraUsers.joey = {
+      createHome = true;
+      home = "/home/joey";
+      shell = pkgs.fish;
+      extraGroups = [ "wheel" "networkmanager" ];
+    };
 
-  system.stateVersion = "19.09";
-}
+    system.stateVersion = "19.09";
+  }

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-rm /etc/nixos/configuration.nix
-rm /etc/nixos/update
+rm /etc/nixos/configuration.nix 2> /dev/null
+rm /etc/nixos/update 2> /dev/null
 cp ./configuration.nix /etc/nixos/configuration.nix
 cp ./update /etc/nixos/update

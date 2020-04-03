@@ -47,4 +47,6 @@
     shell = pkgs.fish;
     extraGroups = [ "wheel" "networkmanager" ];
   };
+
+  system.stateVersion = "19.09"
 }

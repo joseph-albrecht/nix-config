@@ -59,7 +59,7 @@
                                       inherit (repoMeta) sha256 rev;
                                     };
                                     buildInputs = old.buildInputs ++ [ super.jansson ];
-                                  })
+                                  });
       })
     ];
     

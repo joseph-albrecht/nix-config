@@ -60,7 +60,7 @@
                                     };
                                     buildInputs = old.buildInputs ++ [ super.jansson ];
                                   })
-      }
+      })
     ];
     
     

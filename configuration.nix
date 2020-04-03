@@ -60,7 +60,7 @@
                                     };
                                     buildInputs = old.buildInputs ++ [ super.jansson ];
                                     patches = [
-                                      ./tramp-detect-wrapped-gvfsd.patch
+                                      ./tramp-detect-wrapped-gvfsd-27.patch
                                       ./clean-env.patch
                                     ];
                                   });

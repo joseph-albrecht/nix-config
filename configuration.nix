@@ -51,5 +51,5 @@
     extraGroups = [ "wheel" "networkmanager" ];
   };
 
-  system.stateVersion = "19.09"
+  system.stateVersion = "19.09";
 }

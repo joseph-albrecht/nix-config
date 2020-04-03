@@ -12,20 +12,18 @@
   networking.hostName = "mymachine"; 
   networking.networkmanager.enable = true;
 
-  {
-    services.xserver = {
-      libinput.enable = true;
-      synaptics.enable = false;
-  
-      config = ''
-        Section "InputClass"
-          Identifier     "Enable libinput for TrackPoint"
-          MatchIsPointer "on"
-          Driver         "libinput"
-        EndSection
-      '';
-    };
-  }
+  services.xserver = {
+    libinput.enable = true;
+    synaptics.enable = false;
+
+    config = ''
+      Section "InputClass"
+        Identifier     "Enable libinput for TrackPoint"
+        MatchIsPointer "on"
+        Driver         "libinput"
+      EndSection
+    '';
+  };
 
   i18n = {
     consoleKeyMap = "dvorak";

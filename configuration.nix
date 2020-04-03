@@ -12,10 +12,20 @@
   networking.hostName = "mymachine"; 
   networking.networkmanager.enable = true;
 
-  hardware.enableAllFirmware = true;
-  hardware.opengl.driSupport32Bit = true;
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.support32Bit = true;
+  {
+    services.xserver = {
+      libinput.enable = true;
+      synaptics.enable = false;
+  
+      config = ''
+        Section "InputClass"
+          Identifier     "Enable libinput for TrackPoint"
+          MatchIsPointer "on"
+          Driver         "libinput"
+        EndSection
+      '';
+    };
+  }
 
   i18n = {
     consoleKeyMap = "dvorak";
@@ -32,11 +42,8 @@
   ];
 
   services.xserver.enable = true;
-  services.xserver.windowManager.i3.enable = true;
-  services.xserver.windowManager.default = "i3";
-  services.xserver.synaptics.enable = true;
-  services.xserver.libinput.tapping = false;
   services.xserver.layout = "dvorak";
+  services.xserver.libinput.tapping = false;
   services.xserver.desktopManager.plasma5.enable = true;
  
   users.extraUsers.joey = {

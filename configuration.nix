@@ -55,7 +55,7 @@
                                   };
                                   buildInputs = old.buildInputs ++ [ super.jansson ];
                                 });
-    });]
+    })]
     
     
   services.xserver.enable = true;

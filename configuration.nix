@@ -42,7 +42,7 @@
   
   #copied from https://github.com/nix-community/emacs-overlay/
   nixpkgs.overlays = [
-    (self: super: 
+    (self: super: {
       emacsGit = let
         repoMeta = super.lib.importJSON ./emacs-emacs-27.json;
       in (self.emacs.override { srcRepo = true; }).overrideAttrs(old: {
@@ -55,7 +55,7 @@
                                   };
                                   buildInputs = old.buildInputs ++ [ super.jansson ];
                                 });
-    )]
+    })]
     
     
   services.xserver.enable = true;

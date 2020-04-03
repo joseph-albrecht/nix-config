@@ -59,22 +59,26 @@
                                       inherit (repoMeta) sha256 rev;
                                     };
                                     buildInputs = old.buildInputs ++ [ super.jansson ];
+                                    patches = [
+                                      ./tramp-detect-wrapped-gvfsd.patch
+                                      ./clean-env.patch
+                                    ];
                                   });
       })
-    ];
-    
-    
-    services.xserver.enable = true;
-    services.xserver.layout = "dvorak";
-    services.xserver.libinput.tapping = false;
-    services.xserver.desktopManager.plasma5.enable = true;
-    
-    users.extraUsers.joey = {
-      createHome = true;
-      home = "/home/joey";
-      shell = pkgs.fish;
-      extraGroups = [ "wheel" "networkmanager" ];
-    };
+  ];
+  
+  
+  services.xserver.enable = true;
+  services.xserver.layout = "dvorak";
+  services.xserver.libinput.tapping = false;
+  services.xserver.desktopManager.plasma5.enable = true;
+  
+  users.extraUsers.joey = {
+    createHome = true;
+    home = "/home/joey";
+    shell = pkgs.fish;
+    extraGroups = [ "wheel" "networkmanager" ];
+  };
 
-    system.stateVersion = "19.09";
-  }
+  system.stateVersion = "19.09";
+}

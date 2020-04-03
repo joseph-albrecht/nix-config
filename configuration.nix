@@ -5,6 +5,10 @@
     ./hardware-configuration.nix
   ];
 
+  nix.nixPath = [
+    "nix-pkgs-overlays=/etc/nixos/overlays-compat/"
+  ];
+
   boot.loader.grub.enable  = true;
   boot.loader.grub.version = 2;
   boot.loader.grub.device  = "/dev/sda";
@@ -42,22 +46,21 @@
   
   #copied from https://github.com/nix-community/emacs-overlay/
   nixpkgs.overlays = [
-    (self: super: 
-      emacsGit = let
-        repoMeta = super.lib.importJSON ./emacs-emacs-27.json;
-      in (self.emacs.override { srcRepo = true; }).overrideAttrs(old: {
-                                  name = "emacs-git-${repoMeta.version}";
-                                  inherit (repoMeta) version;
-                                  src = super.fetchFromGitHub {
-                                    owner = "emacs-mirror";
-                                    repo = "emacs";
-                                    inherit (repoMeta) sha256 rev;
-                                  };
-                                  buildInputs = old.buildInputs ++ [ super.jansson ];
-                                });
-    )]
-    
-    
+    emacsGit = let
+      repoMeta = super.lib.importJSON ./emacs-emacs-27.json;
+    in (self.emacs.override { srcRepo = true; }).overrideAttrs(old: {
+                                name = "emacs-git-${repoMeta.version}";
+                                inherit (repoMeta) version;
+                                src = super.fetchFromGitHub {
+                                  owner = "emacs-mirror";
+                                  repo = "emacs";
+                                  inherit (repoMeta) sha256 rev;
+                                };
+                                buildInputs = old.buildInputs ++ [ super.jansson ];
+                              });
+  ];
+  
+  
   services.xserver.enable = true;
   services.xserver.layout = "dvorak";
   services.xserver.libinput.tapping = false;

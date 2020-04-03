@@ -39,8 +39,6 @@
   services.xserver.layout = "dvorak";
   services.xserver.desktopManager.plasma5.enable = true;
  
-  desktopManager.xterm.enable = false;
- 
   users.extraUsers.joey = {
     createHome = true;
     home = "/home/joey";

@@ -13,7 +13,7 @@
   boot.loader.grub.version = 2;
   boot.loader.grub.device  = "/dev/sda";
 
-  networking.hostName = "mymachine"; 
+  networking.hostName = "geode"; 
   networking.networkmanager.enable = true;
 
   services.xserver = {

@@ -36,6 +36,7 @@
   time.timeZone = "US/Eastern";
 
   environment.systemPackages = with pkgs; [
+    brave
     fish
     git
     iosevka

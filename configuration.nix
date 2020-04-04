@@ -41,9 +41,9 @@
     git
     iosevka
     ripgrep
+    xcape
   ];
 
-  
   #copied from https://github.com/nix-community/emacs-overlay/
   nixpkgs.overlays = [
     (self: super:
@@ -70,6 +70,7 @@
   
   services.xserver.enable = true;
   services.xserver.layout = "dvorak";
+  services.xserver.xkbOptions = "ctrl:swapcaps";
   services.xserver.libinput.tapping = false;
   services.xserver.desktopManager.plasma5.enable = true;
   

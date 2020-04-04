@@ -36,10 +36,10 @@
   time.timeZone = "US/Eastern";
 
   environment.systemPackages = with pkgs; [
-    emacsGit
     fish
     git
     iosevka
+    myemacs
     ripgrep
     xcape
   ];
@@ -48,7 +48,7 @@
   nixpkgs.overlays = [
     (self: super:
       {
-        emacsGit = let
+        myemacs = let
           repoMeta = super.lib.importJSON ./emacs-emacs-27.json;
         in (self.emacs.override { srcRepo = true; }).overrideAttrs(old: {
                                     name = "emacs-git-${repoMeta.version}";

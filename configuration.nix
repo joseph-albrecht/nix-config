@@ -30,7 +30,6 @@
   };
 
   i18n = {
-    consoleKeyMap = "dvorak";
     defaultLocale = "en_US.UTF-8";
     consoleUseXkbConfig = true;
   };

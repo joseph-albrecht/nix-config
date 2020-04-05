@@ -41,6 +41,7 @@
     git
     iosevka
     myemacs
+    neovim
     ripgrep
     xcape
   ];

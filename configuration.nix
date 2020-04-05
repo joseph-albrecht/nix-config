@@ -37,15 +37,16 @@
 
   environment.systemPackages = with pkgs; [
     brave
-    fish
-    git
-    htop
-    iosevka
     ((pkgs.emacsPackagesGen pkgs.myemacs).emacsWithPackages (epkgs:
       (with epkgs;
         [
           pdf-tools
         ])))
+    fish
+    git
+    htop
+    iosevka
+    musescore
     neovim
     ripgrep
     xcape

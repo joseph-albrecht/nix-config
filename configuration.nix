@@ -40,7 +40,7 @@
     fish
     git
     iosevka
-    (emacsWithPackagesNgGen pkgs.myemacs).emacsWithPackages (epkgs:
+    (emacsWithPackageGen pkgs.myemacs).emacsWithPackages (epkgs:
       (with epkgs;
         [
           pdf-tools

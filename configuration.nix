@@ -39,6 +39,7 @@
     brave
     fish
     git
+    htop
     iosevka
     ((pkgs.emacsPackagesGen pkgs.myemacs).emacsWithPackages (epkgs:
       (with epkgs;

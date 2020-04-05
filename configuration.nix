@@ -74,7 +74,17 @@
   services.xserver.xkbOptions = "ctrl:swapcaps";
   services.xserver.libinput.tapping = false;
   services.xserver.desktopManager.plasma5.enable = true;
-  
+
+  systemd.user.services."xcape" = {
+    enable = true;
+    description = "xcape to use CTRL as ESC when pressed alone";
+    wantedBy = [ "default.target" ];
+    serviceConfig.Type = "forking";
+    serviceConfig.Restart = "always";
+    serviceConfig.RestartSec = 2;
+    serviceConfig.ExecStart = "${pkgs.xcape}/bin/xcape";
+  }; 
+
   users.extraUsers.joey = {
     createHome = true;
     home = "/home/joey";

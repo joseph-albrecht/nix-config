@@ -40,12 +40,11 @@
     fish
     git
     iosevka
-    (emacsWithPackagesGen pkgs.myemacs).emacsWithPackages (epkgs:
+    ((pkgs.emacsPackagesGen pkgs.myemacs).emacsWithPackages (epkgs:
       (with epkgs;
         [
           pdf-tools
-          evil
-        ]))
+        ])))
     neovim
     ripgrep
     xcape

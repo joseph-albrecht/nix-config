@@ -6,7 +6,7 @@
   ];
 
   nix.nixPath =
-    options.nix.nixPath.default ++ 
+    nix.nixPath.default ++ 
     [ "nixpkgs-overlays=/etc/nixos/overlays-compat/" ];
 
   boot.loader.grub.enable  = true;

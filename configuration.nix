@@ -90,12 +90,11 @@
   let
     myCustomLayout = pkgs.writeText "xkb-layout"
       ''
-      keycode 108 = R_Super
-      keycode 37  = L_Ctrl
+      keycode 108 = Super_R
+      keycode 37  = Ctrl_L
       '';
   in
     services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}";
-  
 
   systemd.user.services."xcape" = {
     enable = true;

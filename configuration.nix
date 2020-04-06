@@ -78,7 +78,7 @@
   
   services.xserver.enable = true;
   services.xserver.layout = "dvorak";
-  services.xserver.xkbOptions = "ctrl:swapcaps";
+  services.xserver.xkbOptions = "ctrl:swapcaps, super:ralt";
   services.xserver.libinput.tapping = false;
   services.xserver.displayManager.slim.enable = true;
   services.xserver.windowManager.session = lib.singleton {

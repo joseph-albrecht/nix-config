@@ -80,14 +80,14 @@
   services.xserver.enable = true;
   services.xserver.libinput.tapping = false;
   services.xserver.displayManager.slim.enable = true;
+  services.xserver.layout = "dvorak";
   services.xserver.windowManager.session = lib.singleton {
     name = "exwm";
     start = ''
+        xmodmap /etc/nixos/keyboard.xmodmap
         /run/current-system/sw/bin/emacs --eval '(progn (server-start) (exwm-init))'
         '';
   };
-
-  services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap /etc/nixos/keyboard.xmodmap";
 
   systemd.user.services."xcape" = {
     enable = true;

@@ -78,7 +78,6 @@
   
   services.xserver.enable = true;
   services.xserver.layout = "dvorak";
-  services.xserver.xkbOptions = "ctrl:swapcaps,altwin:swap_ralt_rwin";
   services.xserver.libinput.tapping = false;
   services.xserver.displayManager.slim.enable = true;
   services.xserver.windowManager.session = lib.singleton {
@@ -87,6 +86,16 @@
         /run/current-system/sw/bin/emacs --eval '(progn (server-start) (exwm-init))'
         '';
   };
+
+  let
+    myCustomLayout = pkgs.writeText "xkb-layout"
+      ''
+      keycode 108 = R_Super
+      keycode 37  = L_Ctrl
+      '';
+  in
+    services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}";
+  
 
   systemd.user.services."xcape" = {
     enable = true;

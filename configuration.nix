@@ -85,7 +85,6 @@
     name = "exwm";
     start = ''
         /run/current-system/sw/bin/emacs --eval '(progn (server-start) (exwm-init))'
-        xmodmap /etc/nixos/keyboard.xmodmap
         '';
   };
 

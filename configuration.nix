@@ -2,8 +2,8 @@
 let
   myCustomLayout = pkgs.writeText "xkb-layout"
     ''
-      keycode 108 = Super_R
-      keycode 37  = Ctrl_L
+      keysym Alt_R = Super_R
+      keysym Caps_lock = Ctrl_L
      '';
 in
 {

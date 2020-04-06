@@ -84,8 +84,8 @@
   services.xserver.windowManager.session = lib.singleton {
     name = "exwm";
     start = ''
-        xmodmap /etc/nixos/keyboard.xmodmap
         /run/current-system/sw/bin/emacs --eval '(progn (server-start) (exwm-init))'
+        xmodmap /etc/nixos/keyboard.xmodmap
         '';
   };
 

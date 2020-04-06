@@ -41,14 +41,15 @@
       (with epkgs;
         [
           pdf-tools
+          exwm
         ])))
     fish
     git
     htop
     iosevka
-    musescore
     neovim
     ripgrep
+    urxvt
     xcape
   ];
 
@@ -80,7 +81,13 @@
   services.xserver.layout = "dvorak";
   services.xserver.xkbOptions = "ctrl:swapcaps";
   services.xserver.libinput.tapping = false;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.displayManager.slim.enable = true;
+  services.xserver.windowManager.session = lib.singleton {
+    name = "exwm";
+    start = ''
+        ${emacs}/bin/emacs --eval '(progn (server-start) (exwm-enable))'
+        '';
+  };
 
   systemd.user.services."xcape" = {
     enable = true;

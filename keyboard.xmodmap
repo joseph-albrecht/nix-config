@@ -33,6 +33,6 @@ keycode 21 = bracketright braceright
 keycode 35 = equal plus
 keycode 34 = slash question
 keycode 48 = minus underscore
-keysym Alt_R = Super_R
 clear Lock
-keysym Caps_Lock = Ctrl_L
+keycode 108 = R_Super
+keycode 37  = L_Ctrl

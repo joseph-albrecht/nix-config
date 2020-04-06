@@ -34,5 +34,5 @@ keycode 35 = equal plus
 keycode 34 = slash question
 keycode 48 = minus underscore
 clear Lock
-keycode 108 = Super_R
-keycode 37  = Control_L
+keycode 108 = Super_R Super_R
+keycode 37  = Control_L Control_L

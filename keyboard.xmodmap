@@ -33,12 +33,12 @@ keycode 21 = bracketright braceright
 keycode 35 = equal plus
 keycode 34 = slash question
 keycode 48 = minus underscore
+keycode 66 = Control_L Control_L
+keycode 108 = Super_R 
 
 clear Lock
 clear Control
-keycode 66 = Control_L NoSymbol Control_L
 add Control = Control_L Control_R
 
-keycode 108 = Super_R 
 remove mod1 = Super_R
 add mod4 = Super_R

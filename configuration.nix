@@ -49,7 +49,6 @@
     iosevka
     neovim
     ripgrep
-    urxvt
     xcape
   ];
 

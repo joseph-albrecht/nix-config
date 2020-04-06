@@ -36,7 +36,7 @@ keycode 48 = minus underscore
 
 clear Lock
 clear Control
-keycode 37 = Control_L NoSymbol Control_L
+keycode 66 = Control_L NoSymbol Control_L
 add Control = Control_L Control_R
 
 keycode 108 = Super_R 

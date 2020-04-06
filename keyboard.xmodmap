@@ -35,4 +35,4 @@ keycode 34 = slash question
 keycode 48 = minus underscore
 keysym Alt_R = Super_R
 clear Lock
-keysym Caps_Lock = Control_L
+keysym Caps_Lock = Ctrl_L

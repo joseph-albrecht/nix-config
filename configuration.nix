@@ -84,7 +84,7 @@
   services.xserver.windowManager.session = lib.singleton {
     name = "exwm";
     start = ''
-        /run/current-system/sw/bin/emacs --eval '(progn (server-start) (exwm-enable))'
+        /run/current-system/sw/bin/emacs --eval '(progn (server-start) (exwm-init))'
         '';
   };
 

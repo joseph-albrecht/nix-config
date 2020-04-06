@@ -91,6 +91,7 @@ in
     neovim
     ripgrep
     xcape
+    xorg.xmodmap
   ];
 
   #copied from https://github.com/nix-community/emacs-overlay/

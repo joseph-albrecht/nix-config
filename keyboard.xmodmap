@@ -33,6 +33,9 @@ keycode 21 = bracketright braceright
 keycode 35 = equal plus
 keycode 34 = slash question
 keycode 48 = minus underscore
-clear Lock
-keycode 108 = Super_R Super_R
-keycode 37  = Control_L Control_L
+remove Lock = Caps_Lock
+remove Control = Control_L
+keysym Caps_Lock = Control_L
+keysym Control_L = Caps_Lock
+add Lock = Caps_Lock
+add Control = Control_L

@@ -34,7 +34,10 @@ keycode 35 = equal plus
 keycode 34 = slash question
 keycode 48 = minus underscore
 
+clear Lock
+clear Control
 keycode 37 = Control_L NoSymbol Control_L
+add Control = Control_L Control_R
 
 keycode 108 = Super_R 
 remove mod1 = Super_R

@@ -3,7 +3,9 @@ rm /etc/nixos/configuration.nix 2> /dev/null
 rm /etc/nixos/update 2> /dev/null
 rm /etc/nixos/tramp-detect-wrapped-gvfsd-27.patch 2> /dev/null
 rm /etc/nixos/clean-env.patch 2> /dev/null
+rm /etc/nixos/keyboard.xmodmap 2> /dev/null
 cp ./configuration.nix /etc/nixos/configuration.nix
 cp ./update /etc/nixos/update
 cp ./tramp-detect-wrapped-gvfsd-27.patch /etc/nixos/tramp-detect-wrapped-gvfsd-27.patch
 cp ./clean-env.patch /etc/nixos/clean-env.patch
+cp ./keyboard.xmodmap /etc/nixos/keyboard.xmodmap

@@ -1,46 +1,5 @@
 { config, pkgs, lib, options, ... }:
-let
-  myCustomLayout = pkgs.writeText "xkb-layout"
-    ''
-    keycode 38 = a A
-    keycode 56 = x X
-    keycode 54 = j J
-    keycode 40 = e E
-    keycode 26 = period greater
-    keycode 41 = u U
-    keycode 42 = i I
-    keycode 43 = d D
-    keycode 31 = c C
-    keycode 44 = h H
-    keycode 45 = t T
-    keycode 46 = n N
-    keycode 58 = m M
-    keycode 57 = b B
-    keycode 32 = r R
-    keycode 33 = l L
-    keycode 24 = apostrophe quotedbl
-    keycode 27 = p P
-    keycode 39 = o O
-    keycode 28 = y Y
-    keycode 30 = g G
-    keycode 55 = k K
-    keycode 25 = comma less
-    keycode 53 = q Q
-    keycode 29 = f F
-    keycode 52 = semicolon colon
-    keycode 59 = w W
-    keycode 20 = bracketleft braceleft
-    keycode 60 = v V
-    keycode 61 = z Z
-    keycode 47 = s S
-    keycode 21 = bracketright braceright
-    keycode 35 = equal plus
-    keycode 34 = slash question
-    keycode 48 = minus underscore
-    keysym Alt_R = Super_R
-    keysym Caps_lock = Ctrl_L
-     '';
-in
+
 {
   imports = [
     ./hardware-configuration.nix
@@ -128,7 +87,7 @@ in
         '';
   };
 
-  services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap ${myCustomLayout}";
+  services.xserver.displayManager.sessionCommands = "${pkgs.xorg.xmodmap}/bin/xmodmap /etc/nixos/keyboard.xmodmap";
 
   systemd.user.services."xcape" = {
     enable = true;

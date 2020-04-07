@@ -16,6 +16,10 @@
   networking.hostName = "geode"; 
   networking.networkmanager.enable = true;
 
+  hardware.pulseaudio.package = pkgs.pulseaudioFull;
+  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true;
+
   services.xserver = {
     libinput.enable = true;
     synaptics.enable = false;

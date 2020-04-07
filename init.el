@@ -8,3 +8,8 @@
 (global-set-key (kbd "s-u") (lambda () (interactive) (shell-command "amixer set Master 10%+")))
 (global-set-key (kbd "s-d") (lambda () (interactive) (shell-command "amixer set Master 10%-")))
 (global-set-key (kbd "s-m") (lambda () (interactive) (shell-command "amixer set Master toggle")))
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(fringe-mode 1)

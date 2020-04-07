@@ -5,7 +5,6 @@
 (shell-command "xmodmap ~/nix-config/keyboard.xmodmap")
 (shell-command "xmodmap ~/nix-config/keyboard.xmodmap")
 
-
-(define-key (kbd "s-u") (lambda () (shell-command "amixer set Master 10%+")))
-(define-key (kbd "s-d") (lambda () (shell-command "amixer set Master 10%-")))
-(define-key (kbd "s-m") (lambda () (shell-command "amixer set Master toggle")))
+(global-set-key (kbd "s-u") (lambda () (interactive) (shell-command "amixer set Master 10%+")))
+(global-set-key (kbd "s-d") (lambda () (interactive) (shell-command "amixer set Master 10%-")))
+(global-set-key (kbd "s-m") (lambda () (interactive) (shell-command "amixer set Master toggle")))

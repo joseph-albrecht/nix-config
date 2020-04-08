@@ -1,4 +1,16 @@
-keycode 38 = a A
+keycode 10 = currency 1
+keycode 11 = braceleft 2
+keycode 12 = asterksi 3
+keycode 13 = bracketleft 4
+keycode 14 = parenleft 5
+keycode 15 = equal 6
+keycode 16 = parenright 7
+keycode 17 = braceright 8
+keycode 18 = bracketright 9
+keycode 19 = asterisk 0
+keycode 20 = ampersand at
+keycode 21 = percent numbersign
+
 keycode 56 = x X
 keycode 54 = j J
 keycode 40 = e E
@@ -30,7 +42,7 @@ keycode 60 = v V
 keycode 61 = z Z
 keycode 47 = s S
 keycode 21 = bracketright braceright
-keycode 35 = equal plus
+keycode 35 = exclam asciicircum
 keycode 34 = slash question
 keycode 48 = minus underscore
 keycode 66 = Control_L Control_L

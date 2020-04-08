@@ -5,9 +5,9 @@ keycode 13 = bracketleft 4
 keycode 14 = parenleft 5
 keycode 15 = equal 6
 keycode 16 = parenright 7
-keycode 17 = braceright 8
-keycode 18 = bracketright 9
-keycode 19 = plus 0
+keycode 17 = bracketright 8
+keycode 18 = plus 9
+keycode 19 = braceright 0
 keycode 20 = ampersand at
 keycode 21 = percent numbersign
 

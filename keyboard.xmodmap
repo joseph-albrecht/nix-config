@@ -1,4 +1,4 @@
-keycode 10 = currency 1
+keycode 10 = dollar 1
 keycode 11 = braceleft 2
 keycode 12 = asterisk 3
 keycode 13 = bracketleft 4
@@ -37,11 +37,9 @@ keycode 53 = q Q
 keycode 29 = f F
 keycode 52 = semicolon colon
 keycode 59 = w W
-keycode 20 = bracketleft braceleft
 keycode 60 = v V
 keycode 61 = z Z
 keycode 47 = s S
-keycode 21 = bracketright braceright
 keycode 35 = exclam asciicircum
 keycode 34 = slash question
 keycode 48 = minus underscore

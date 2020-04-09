@@ -51,6 +51,7 @@
     git
     htop
     iosevka
+    musescore
     neovim
     ripgrep
     xcape
